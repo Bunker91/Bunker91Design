@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { createClient } from '@supabase/supabase-js'
+import UserCard from '@/components/UserCard'
 
 const supabase = createClient(
   'https://besntryyclwztpuhmxcy.supabase.co',
@@ -149,6 +150,14 @@ export default function AdminUsersPage() {
       {loading ? (
         <p>Carregando usuários...</p>
       ) : (
+{usuarios.map((user) => (
+  <UserCard
+    key={user.id}
+    email={user.email}
+    role={user.role}
+    ativo={user.ativo}
+  />
+))}
         <table className="w-full text-left border border-gray-700">
           <thead>
             <tr className="bg-gray-800">
