@@ -4,6 +4,7 @@
 
 import React, { useEffect, useState } from 'react'
 import { createClient } from '@supabase/supabase-js'
+import NotificationItem from '@/components/NotificationItem'
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -67,6 +68,9 @@ export default function NotificationsPage() {
   return (
     <div className="p-6 text-white min-h-screen bg-gray-900">
       <h1 className="text-3xl font-bold mb-6">Notificações</h1>
+      {notificacoes.map((notificacao) => (
+  <NotificationItem key={notificacao.id} {...notificacao} />
+))}
 
       <form onSubmit={sendNotification} className="mb-8 space-y-4 max-w-xl">
         <input
