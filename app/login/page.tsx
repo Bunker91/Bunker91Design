@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { createClient } from '@supabase/supabase-js'
 import { useRouter } from 'next/navigation'
+import LoginForm from '@/components/LoginForm'
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
@@ -37,6 +38,7 @@ export default function LoginPage() {
   }
 
   return (
+    <LoginForm />
     <div className="min-h-screen flex flex-col justify-center items-center bg-gray-900 text-white p-4">
       <h1 className="text-3xl font-bold mb-6">Login</h1>
       <div className="w-full max-w-sm">
