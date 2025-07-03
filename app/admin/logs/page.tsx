@@ -4,6 +4,7 @@
 
 import React, { useEffect, useState } from 'react'
 import { createClient } from '@supabase/supabase-js'
+import LogItem from '@/components/LogItem'
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -50,6 +51,9 @@ export default function LogsPage() {
           </tr>
         </thead>
         <tbody>
+          {logs.map((log) => (
+  <LogItem key={log.id} log={log} />
+))}
           {logs.map((log) => (
             <tr key={log.id} className="even:bg-gray-800 odd:bg-gray-700">
               <td className="border border-gray-600 px-4 py-2">{log.action}</td>
