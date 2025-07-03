@@ -1,1 +1,0 @@
-// página de login com autenticação Supabase
