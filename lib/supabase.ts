@@ -1,1 +1,0 @@
-// inicialização do cliente Supabase
