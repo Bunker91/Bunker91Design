@@ -1,1 +1,0 @@
-// filtros por nicho/idioma

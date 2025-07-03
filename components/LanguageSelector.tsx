@@ -1,1 +1,0 @@
-// seleção de idiomas

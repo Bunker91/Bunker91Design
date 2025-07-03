@@ -1,1 +1,0 @@
-// página de detalhes do kit
