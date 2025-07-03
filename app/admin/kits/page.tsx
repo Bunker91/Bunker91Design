@@ -6,6 +6,7 @@ import { DndContext, closestCenter, PointerSensor, useSensor, useSensors, DragEn
 import { arrayMove, SortableContext, sortableKeyboardCoordinates, verticalListSortingStrategy } from '@dnd-kit/sortable';
 import { restrictToVerticalAxis } from '@dnd-kit/modifiers';
 import SortableItem from './SortableItem'; // componente que vamos criar pra cada item sortable
+import KitForm from '@/components/KitForm'
 
 const supabase = createClient(
   'https://besntryyclwztpuhmxcy.supabase.co',
@@ -220,6 +221,7 @@ export default function AdminKitsPage() {
       {loading ? (
         <p>Carregando kits...</p>
       ) : (
+      {showForm && <KitForm onClose={() => setShowForm(false)} />}
         <DndContext
           sensors={sensors}
           collisionDetection={closestCenter}
