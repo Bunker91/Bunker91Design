@@ -1,0 +1,1 @@
+// Zustand store para usuário
