@@ -1,22 +1,36 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  // suporte a múltiplos idiomas (i18n)
-  i18n: {
-    locales: ['pt', 'en', 'fr'],
-    defaultLocale: 'pt',
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    './app/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+  ],
+  theme: {
+    extend: {
+      colors: {
+        background: '#0D0C1D',       // fundo geral escuro
+        topbar: '#1A1B2E',           // barra superior (azul escuro arroxeado)
+        midbar: '#2E2F45',           // para hovers ou elementos de destaque
+        highlight: '#FF2E63',        // vermelho rosado neon
+        light: '#F5F5F5',            // textos claros
+        glass: 'rgba(255, 255, 255, 0.05)', // fundo transparente leve
+      },
+      backgroundImage: {
+        'bunker-fundo': "url('/fundo-bunker91.jpg')", // coloque a imagem em /public/
+      },
+      backdropBlur: {
+        sm: '4px',
+        md: '8px',
+      },
+      boxShadow: {
+        'bunker-glow': '0 4px 20px rgba(255, 46, 99, 0.4)',
+      },
+      fontFamily: {
+        sans: ['"Inter"', 'sans-serif'],
+      },
+      borderRadius: {
+        xl: '1rem',
+      },
+    },
   },
-
-  // ativar compressão automática para melhorar performance
-  compress: true,
-
-  // configuração para imagens (se usar o next/image)
-  images: {
-    domains: ['your-image-domain.com', 'supabase.co'], // adicione os domínios de onde as imagens virão
-  },
-
-  // outras configurações padrão
-  reactStrictMode: true,
-  swcMinify: true,
-};
-
-module.exports = nextConfig;
+  plugins: [],
+}
